@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import './widgets/transaction_list.dart';
+import 'package:personal_expenses/widgets/new_transactions.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +14,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  
   // String titleInput;
   // String amountInput;
   final titleController = TextEditingController();
@@ -38,37 +36,6 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          Card(
-            child: Container(
-              padding: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  TextField(
-                    decoration: InputDecoration(labelText: 'Title'),
-                    controller: titleController,
-                    // onChanged: (val) {
-                    //   titleInput = val;
-                    // },
-                  ),
-                  TextField(
-                    decoration: InputDecoration(labelText: 'Amount'),
-                    controller: amountController,
-                    // onChanged: (val) => amountInput = val,
-                  ),
-                  FlatButton(
-                    child: Text('Add Transaction'),
-                    textColor: Colors.purple,
-                    onPressed: () {
-                      print(titleController.text);
-                      print(amountController.text);
-                    },
-                  )
-                ],
-              ),
-            ),
-          ),
-          TransactionList()
         ],
       ),
     );
